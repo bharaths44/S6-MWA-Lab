@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ticket Booking</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        } */
+
+        form h2 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px 20px 20px 20px;
+            border-radius: 10px 10px 10px 10px;
+            width: 50%;
+            margin: auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        form button[type="reset"] {
+            background-color: #6c757d;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <h1>Online Bus Ticket Booking</h1><br>
+    </div>
+    <form action="confirmation.html">
+        <h2>Book Ticket</h2>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name">
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob">
+        <label for="from">From :</label>
+        <select id="from" name="from">
+            <option value="Kakkanad">Kakkanad</option>
+            <option value="Thrikakara">Thrikakara</option>
+            <option value="Kozhikode">Kozhikode</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Kottayam">Kottayam</option>
+        </select>
+        <label for="to">To :</label>
+        <select id="to" name="to">
+            <option value="Kakkanad">Kakkanad</option>
+            <option value="Thrikakara">Thrikakara</option>
+            <option value="Kozhikode">Kozhikode</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Kottayam">Kottayam</option>
+        </select>
+        <label for="date">Date of Journey:</label>
+        <input type="date" id="date" name="date">
+        <button type="submit">Book Ticket</button>
+        <button type="reset">Reset</button>
+    </form>
+    <div id="footer">
+        <p>&copy; 2022 Online Bus Ticket Booking</p>
+    </div>
+</body>
+
+</html>
