@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<meta lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Week 4: JavaScript</title>
+   
+
+    <script>
+        function sumsort() {
+            let size = parseInt(prompt("Kindly enter the size of elements in the array: "));
+            var arr=[],sorted=[];
+            var sum=0,temp;
+            for(let i = 0; i < size; i++)
+            {
+                arr.push(+prompt("Enter element " + (i+1) + ": "));
+                sorted[i]=arr[i];
+                sum+=arr[i];
+            }
+            for(let i = 0; i < size; i++)
+            {
+                for(let j = 0; j < size-i-1; j++)
+                {
+                    if(sorted[j]>sorted[j+1])
+                    {
+                        temp=sorted[j];
+                        sorted[j]=sorted[j+1];
+                        sorted[j+1]=temp;
+                    }
+                }
+            }
+            alert('Given array: ' + arr.join(', ') + "\n\nSum of elements: " + sum + "\nSorted array: " +sorted.join(', '));
+        }
+
+        function grades() {
+            let studsize = parseInt(prompt("Enter the number of students in the class: "));
+            let subsize = parseInt(prompt("Enter the number of subjects: "));
+            let classSumMarks = 0;
+            let classSumGrade = 0;
+            let output = "<h3>Grades:</h3>";
+
+            for (let i = 1; i <= studsize; i++) {
+                let studSumMarks = 0;
+                output += "<h4>Student " + i + ":</h4><ul>";
+                for (let j = 1; j <= subsize; j++) {
+                    let grade = parseFloat(prompt("Enter the grade of Student " + i + " for Subject " + j + ": "));
+                    output += "<li>Subject " + j + ": " + grade + "</li>";
+                    studSumMarks += grade;
+                }
+                let studAvgMarks = studSumMarks / subsize;
+                let gradeLetter = calculateGradeLetter(studAvgMarks);
+                classSumMarks += studAvgMarks;
+                classSumGrade += gradeLetter.charCodeAt(0);
+                output += "<li><strong>Student Average Marks:</strong> " + studAvgMarks.toFixed(2) + "</li>";
+                output += "<li><strong>Student Grade:</strong> " + gradeLetter + "</li></ul>";
+            }
+            let classAvgMarks = classSumMarks / studsize;
+            let classAvgGrade = String.fromCharCode(Math.round(classSumGrade / studsize));
+            output += "<h3>Class Average Marks:</h3><p>" + classAvgMarks.toFixed(2) + "</p>";
+            output += "<h3>Class Average Grade:</h3><p>" + classAvgGrade + "</p>";
+            document.getElementById("gradesOutput").innerHTML = output;
+        }
+
+        function calculateGradeLetter(average) {
+            if (average >= 90) {
+                return "A+";
+            } else if (average >= 80) {
+                return "A";
+            } else if (average >= 70) {
+                return "B";
+            } else if (average >= 60) {
+                return "C";
+            } else if (average >= 50) {
+                return "D";
+            } else if (average >= 40) {
+                return "E";
+            } else {
+                return "F";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <hr style="color:darkgrey ; width: auto; height: 5px; background-color:darkgrey ;">
+    <div style="text-align: justify;">
+        <h5> (Q1) This is a Javascript program to do the following:-
+            <ol type="a">
+                <li>Find the sum of array</li>
+                <li>Implement Bubble Sorting using a function</li>
+            </ol>
+            An alert is used to print the output
+        </h5>
+    </div>
+    <button onclick="sumsort()">Calculate Sum & Sort Elements </button>
+    
+    <hr style="color:darkgrey ; width: auto; height: 5px; background-color:darkgrey ;">
+    <div style="text-align: justify;">
+        <h5> (Q2) This is a Javascript program to do the following:-
+            <ol type="a">
+                <li>Calculate grades of students</li>
+                <li>Calculate average grade of class</li>
+            </ol>
+            Use prompt to get input, use document.write() to display the output
+        </h5>
+    </div>
+    <button onclick="grades()">Calculate Grades</button>
+    <div id="gradesOutput" style="text-align: justify;"></div>
+</body>
+</html>
