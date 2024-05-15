@@ -3,46 +3,75 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery Button Color Change</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <style>
-        .change-color-btn {
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <title>Week 7: JQuery</title>
+    <link rel="icon" href="https://icon-library.com/images/icon-ninja/icon-ninja-15.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <button class="change-color-btn">Change color</button>
-    <div id="container">
-        <p>This is the container.</p>
+    <hr style="color:darkgrey ; width: auto; height: 5px; background-color:darkgrey ;">
+    <div style="text-align: justify;">
+        <h5> (Q1) Create a button named ‘change color’ and Using jquery
+            <br>change its foreground color to red when mouse over
+            <br>and its background color changes to green when mouse out of Button.
+        </h5>
     </div>
+    <button id="changecolor" class="color-button">Change Color</button>
+    <hr style="color:darkgrey ; width: auto; height: 5px; background-color:darkgrey ;">
+    <div style="text-align: justify;">
+        <h5> (Q2) Implement jQuery inserting elements (.before(),.after(), .prepend() and .append()).
+        </h5>
+    </div>
+
+    <div id="container">
+        <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+        </ul>
+    </div>
+
+    <button id="addBefore">Add Before</button>
+    <button id="addAfter">Add After</button>
+    <button id="addPrepend">Prepend</button>
+    <button id="addAppend">Append</button>
+
     <script>
+        // Q1 jQuery script
         $(document).ready(function () {
-            // Task a: Change button color on hover
-            $('.change-color-btn').hover(
-                function () {
-                    $(this).css('color', 'red');
-                },
-                function () {
-                    $(this).css('color', 'black');
-                }
-            );
-            $('.change-color-btn').mouseleave(function () {
+            // Mouseenter event
+            $('#changecolor').mouseenter(function () {
+                $(this).css('color', 'red');
+                $(this).css('background-color', 'white');
+            });
+            // Mouseleave event
+            $('#changecolor').mouseleave(function () {
+                $(this).css('color', 'black');
                 $(this).css('background-color', 'green');
             });
+        });
 
-            // Task b: Inserting elements
-            $('#container').before('<h2>This is inserted before the container</h2>');
-            $('#container').after('<h2>This is inserted after the container</h2>');
-            $('#container').prepend('<p>This is inserted at the beginning of the container</p>');
-            $('#container').append('<p>This is inserted at the end of the container</p>');
+        // Q2 jQuery Script
+        $(document).ready(function () {
+            // Add element before the container
+            $('#addBefore').click(function () {
+                $('<div>This is an item added before the container - BEFORE.</div>').insertBefore('#container');
+            });
+
+            // Add element after the container
+            $('#addAfter').click(function () {
+                $('<div>This is an item added after the container - AFTER.</div>').insertAfter('#container');
+            });
+
+            // Add element as the first child of the list
+            $('#addPrepend').click(function () {
+                $('#container ul').prepend('<li>This is an item added as the first child of the list - PREPEND.</li>');
+            });
+
+            // Add element as the last child of the list
+            $('#addAppend').click(function () {
+                $('#container ul').append('<li>This is an item added as the last child of the list - APPEND.</li>');
+            });
         });
     </script>
 </body>
