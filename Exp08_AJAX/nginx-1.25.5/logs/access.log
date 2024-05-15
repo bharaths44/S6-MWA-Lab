@@ -1,0 +1,5 @@
+127.0.0.1 - - [15/May/2024:06:28:38 +0530] "GET / HTTP/1.1" 200 1962 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0"
+127.0.0.1 - - [15/May/2024:06:28:38 +0530] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0"
+127.0.0.1 - - [15/May/2024:06:28:40 +0530] "GET /books.html HTTP/1.1" 200 875 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0"
+127.0.0.1 - - [15/May/2024:06:28:41 +0530] "GET /books.xml HTTP/1.1" 200 395 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0"
+127.0.0.1 - - [15/May/2024:06:28:41 +0530] "GET /books.json HTTP/1.1" 200 405 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/124.0.0.0"
