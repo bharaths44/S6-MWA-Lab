@@ -12,6 +12,7 @@ Your application should allow users to:Create new inventory items with fields fo
 npm install express mongoose
 ```
 
+* Install MongoDB community server [Download MongoDB Community Server | MongoDB](https://www.mongodb.com/try/download/community)
 * Install mongosh shell [MongoDB Shell Download | MongoDB](https://www.mongodb.com/try/download/shell)
 * Start server in the directory
 
