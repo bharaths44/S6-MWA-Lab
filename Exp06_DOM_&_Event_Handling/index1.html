@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todo List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+            color: #333;
+        }
+    
+        h1 {
+            text-align: center;
+        }
+    
+        #taskInput,
+        #addTaskButton {
+            padding: 10px;
+            margin: 10px 0;
+        }
+    
+        #taskInput {
+            width: 70%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    
+        #addTaskButton {
+            width: 20%;
+            background-color: #5CDB95;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        li {
+            background-color: #EDF5E1;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    
+        li span {
+            margin-right: 10px;
+        }
+    
+        button {
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    
+        .edit {
+            background-color: #5CDB95;
+            color: white;
+        }
+    
+        .delete {
+            background-color: #B71540;
+            color: white;
+        }
+    
+        .completed {
+            text-decoration: line-through;
+        }
+        </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1> To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTaskButton">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        $(document).ready(function() {
+            $('#addTaskButton').click(function() {
+                var task = $('#taskInput').val();
+                if (task.trim()) {
+                    var listItem = $('<li></li>');
+
+                    var checkbox = $('<input>', { type: 'checkbox' }).change(function() {
+                        listItem.css('text-decoration', this.checked ? 'line-through' : 'none');
+                    });
+
+                    var label = $('<span></span>').text(task);
+
+                    var editButton = $('<button></button>').text('Edit').addClass('edit').click(function() {
+                        var newTask = prompt('Edit task', task);
+                        if (newTask) {
+                            label.text(newTask);
+                        }
+                    });
+
+                    var deleteButton = $('<button></button>').text('Delete').addClass('delete').click(function() {
+                        listItem.remove();
+                    });
+
+                    listItem.append(checkbox, label, editButton, deleteButton);
+                    $('#taskList').append(listItem);
+                    $('#taskInput').val('');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
